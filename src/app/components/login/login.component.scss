@@ -1,0 +1,24 @@
+// Color variables
+@import "../../../styles.scss";
+
+.login-container {
+    width: 30vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        color: #fff;
+    }
+    form {
+        p {
+            text-align: center;
+            color: #fff;
+            margin: 1rem 0;
+        }
+        label {
+            color: #fff;
+        }
+    }
+}
