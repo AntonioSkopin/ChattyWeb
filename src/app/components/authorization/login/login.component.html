@@ -1,18 +1,18 @@
 <!-- Login container -->
 <div class="login-container neumorphism-box">
     <h1>LOGIN</h1>
-    <form autocomplete="off">
+    <form [formGroup]="loginForm" autocomplete="off">
         <label>Username:
             <br>
-            <input>
+            <input formControlName="username">
         </label>
         <br><br>
         <label>Password:
             <br>
-            <input type="password">
+            <input formControlName="password" type="password">
         </label>
         <br><br><br>
-        <button class="login-btn submit-btn">Login</button>
+        <button (click)="login(loginForm.value)" class="login-btn submit-btn">Login</button>
         <p>or</p>
         <button class="reg-btn outline-btn">Create an account</button>
     </form>
