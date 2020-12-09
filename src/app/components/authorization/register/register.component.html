@@ -1,0 +1,57 @@
+<div class="login-container neumorphism-box">
+    <div class="login-register-form-container">
+        <mat-horizontal-stepper linear #stepper>
+            <mat-step [stepControl]="persInfo">
+                <h2>Persoonlijke gegevens</h2>
+                <form autocomplete="off" [formGroup]="persInfo">
+                    <label>Firstname:
+                        <br>
+                        <input formControlName="firstname" required>
+                    </label>
+                    <label>Lastname:
+                        <br>
+                        <input formControlName="lastname" required>
+                    </label>
+                    <br><br>
+                    <div>
+                        <button class="submit-btn" mat-raised-button matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="accountInfo">
+                <h2>Account info</h2>
+                <form autocomplete="off" [formGroup]="accountInfo">
+                    <label>Username:
+                        <br>
+                        <input formControlName="username" required>
+                    </label>
+                    <label>Email:
+                        <br>
+                        <input formControlName="email" required>
+                    </label>
+                    <label>Password:
+                        <br>
+                        <input formControlName="password" type="password" required>
+                    </label>
+                    <br><br>
+                    <div>
+                        <button class="submit-btn" mat-button matStepperPrevious>Back</button>
+                        <br><br>
+                        <button class="submit-btn" mat-button matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step>
+                <h2>Registreer nu!</h2>
+                <br><br>
+                <div>
+                    <button class="submit-btn" mat-raised-button matStepperPrevious>Back</button>
+                    <br><br>
+                    <button (click)="register()" class="submit-btn" mat-raised-button>Create your account</button>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</div>

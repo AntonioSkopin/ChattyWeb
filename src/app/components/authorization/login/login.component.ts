@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SnackbarMessageService } from 'src/app/shared/snackbar-message.service';
 import { LoginInput } from '../models/loginInput';
 import { AuthService } from '../services/auth.service';
 
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(
-    private _formBuilder: FormBuilder,
+    private _snackbarMessageService: SnackbarMessageService,
     private _authService: AuthService,
     private _router: Router
   ) { }
@@ -43,9 +44,9 @@ export class LoginComponent implements OnInit {
 
     // Post data to API
     this._authService.login(user).subscribe(res => {
-      this._authService.storageLoginResult(res);
+      this._authService.storeLoginResult(res);
+      this._snackbarMessageService.showMessage("Successfull logged in!", "Close");
       // this._router.navigate(['/panel']);
-      console.log("Ingelogd!");
     });
   }
 

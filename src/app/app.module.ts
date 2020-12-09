@@ -13,6 +13,7 @@ import { localStorageSync } from 'ngrx-store-localstorage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/authorization/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './components/authorization/register/register.component';
 
 const reducers: ActionReducerMap<any> = { AuthState: authReducer, AuthReducer: authReducer };
 
@@ -31,7 +32,8 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     AppComponent,
     NavComponent,
     HomepageComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     AuthModule,
