@@ -1,0 +1,46 @@
+// Color variables
+@import "../../../../styles.scss";
+
+::ng-deep .mat-horizontal-stepper-header-container {
+    display: none !important;
+}
+
+:host ::ng-deep .mat-horizontal-content-container {
+    color: #fff;
+    background-color: $primary-color !important;
+    border: none !important;
+}
+
+::ng-deep .mat-horizontal-content-container {
+    overflow: visible !important;
+}
+
+.login-container {
+    width: 30vw;
+    height: 80vh;
+    color: #fff;
+    button {
+        color: $primary-color;
+    }
+    h1 {
+        color: #fff;
+    }
+    form {
+        p {
+            text-align: center;
+            color: #fff;
+            margin: 1rem 0;
+        }
+        label {
+            color: #fff;
+        }
+    }
+    .login-register-form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column !important;
+        height: 100%;
+    }
+    
+}

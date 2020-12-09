@@ -1,8 +1,10 @@
 import { Action } from '@ngrx/store';
 import { LoginResult } from '../models/loginResult';
+import { User } from '../models/user';
 
 export enum ActionTypes {
-    LoginUser = '[LoginState] LoginUser',
+    LoginUser = '[AuthState] LoginUser',
+    NewUser = '[AuthState] NewUser'
 }
 
 export class LoginUser implements Action {
@@ -10,4 +12,9 @@ export class LoginUser implements Action {
     constructor(public payload: LoginResult) { }
 }
 
-export type AuthActions = LoginUser;
+export class NewUser implements Action {
+    readonly type = ActionTypes.NewUser;
+    constructor(public payload: User) { }
+}
+
+export type AuthActions = LoginUser | NewUser;

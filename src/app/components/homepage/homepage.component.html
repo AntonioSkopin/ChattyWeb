@@ -43,9 +43,17 @@
                     free!
                     Get started and talk with your friends on Chatty!
                 </p>
+                <p>or</p>
+                <button *ngIf="!showRegisterForm" (click)="showRegisterFormAction()" class="reg-btn outline-btn">Create
+                    an account</button>
+                <button *ngIf="showRegisterForm" (click)="showLoginFormAction()"
+                    class="login-btn submit-btn">Login</button>
             </div>
-            <div class="get-started-login">
+            <div *ngIf="!showRegisterForm" class="get-started-login">
                 <app-login></app-login>
+            </div>
+            <div *ngIf="showRegisterForm" class="get-started-register">
+                <app-register></app-register>
             </div>
         </div>
     </div>

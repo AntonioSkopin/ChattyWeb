@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { HttpAuthService } from 'src/app/http-services/http-auth.service';
-import { LoginUser } from '../actions/auth.action';
+import { LoginUser, NewUser } from '../actions/auth.action';
 import { LoginInput } from '../models/loginInput';
 import { LoginResult } from '../models/loginResult';
+import { User } from '../models/user';
 import { AuthState } from '../reducers/auth.reducer';
 
 @Injectable({
@@ -16,13 +17,21 @@ export class AuthService {
     private _httpAuthService: HttpAuthService,
   ) { }
 
-  //storage
-  storageLoginResult(loginResult: LoginResult) {
+  // Storage
+  storeLoginResult(loginResult: LoginResult) {
     this._authStore.dispatch(new LoginUser(loginResult));
   }
 
-  // api
+  storeNewUser(user: User) {
+    this._authStore.dispatch(new NewUser(user));
+  }
+
+  // API
   login(loginInput: LoginInput) {
     return this._httpAuthService.login(loginInput);
+  }
+
+  register(user: User) {
+    return this._httpAuthService.register(user);
   }
 }
